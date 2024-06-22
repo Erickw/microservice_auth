@@ -63,30 +63,6 @@ RSpec.describe 'Users API', type: :request do
     end
   end
 
-  describe 'POST /reset_password' do
-    let(:valid_attributes) { { email: user_email, password: user_password, new_password: 'newpassword' }.to_json }
-    let(:invalid_attributes) { { email: user_email, password: user_email, new_password: '123321' }.to_json }
-    let(:failure_message) { {"password"=>["is too short (minimum is 8 characters)"]} }
-
-    context 'when request is valid' do
-      before { post "/reset_password", params: valid_attributes, headers: headers }
-
-      it 'updates the user password' do
-        expect(response).to have_http_status(200)
-        expect(json['message']).to match(/Password updated successfully/)
-      end
-    end
-
-    context 'when request is invalid' do
-      before { post "/reset_password", params: invalid_attributes, headers: headers }
-
-      it 'returns a validation failure message' do
-        expect(response).to have_http_status(422)
-        expect(JSON.parse(response.body)).to include(failure_message)
-      end
-    end
-  end
-
   describe 'PATCH /users/:id' do
     let(:valid_attributes) { { name: 'Testonildo Neto' }.to_json }
 

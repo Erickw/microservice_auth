@@ -17,21 +17,6 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  def reset_password
-    @user = User.find_by(email: params[:email])
-
-    if @user
-      @user.password = params[:new_password]
-      if @user.save
-        render json: { message: 'Password updated successfully' }, status: :ok
-      else
-        render json: @user.errors, status: :unprocessable_entity
-      end
-    else
-      render json: { error: 'User not found' }, status: :not_found
-    end
-  end
-
   private
 
   def set_user
