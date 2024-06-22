@@ -10,6 +10,20 @@ module RequestSpecHelper
     }
   end
 
+  def invalid_token
+    {
+      "Authorization" => ENV['INVALID_TOKEN'],
+      "Content-Type" => "application/json"
+    }
+  end
+
+  def expired_token
+    {
+      "Authorization" => ENV['EXPIRED_TOKEN'],
+      "Content-Type" => "application/json"
+    }
+  end
+
   def token_generator(user_id)
     expire_hours = ENV['JWT_EXPIRE_HOURS'].to_i
     expire_time = expire_hours.hours.from_now.to_i
