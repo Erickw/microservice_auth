@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 30 }
   validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
-  validates :password, length: { minimum: 8 }, :on => [:create, :reset_password]
+  validates :password, length: { minimum: 8 }, :on => [:create, :update], :allow_blank => true
 
   before_save :downcase_email
 

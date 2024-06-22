@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Authentication', type: :request do
   describe 'POST /signup' do
     let(:valid_attributes) do
-      { user: { name: 'Jubileia', email: 'jubileiaf@mail.com', password: 'password123', password_confirmation: 'password123' } }
+      { user: { name: 'Jubileia', email: 'test@mail.com', password: 'password123', password_confirmation: 'password123' } }
     end
 
     context 'when the request is valid' do
@@ -19,7 +19,7 @@ RSpec.describe 'Authentication', type: :request do
 
     context 'when the request is invalid' do
       let(:failure_message) do
-        {"password"=>["can't be blank", "is too short (minimum is 8 characters)"],
+        {"password"=>["can't be blank"],
          "email"=>["is invalid", "can't be blank"]}
       end
       let(:invalid_attributes) do
