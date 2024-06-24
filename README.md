@@ -2,6 +2,15 @@
 
 Microserviço de usuários em Ruby on Rails que implementa operações CRUD, geração de tokens seguros utilizando JWT e troca de senha utilizando PostgreSQL.
 
+## Funcionalidades
+
+- Registro de novo usuário e token especifico JWT;
+- Login de usuário e partir da validação das respectivas credênciais;
+- Atualização de usuário;
+- Remoção de Usuário;
+- Leitura de usuário;
+- Middleware para *autorização* de rotas protegidas.
+
 ## Configuração
 
 ### Pré-requisitos
