@@ -34,7 +34,8 @@ Microserviço de usuários em Ruby on Rails que implementa operações CRUD, ger
 
 4. Configure as variáveis de ambiente:
 
-   Crie um arquivo `.env` na raiz do projeto e defina as seguintes variáveis:
+   Crie um arquivo `.env` na raiz do projeto e defina as variáveis abaixo, para evitar inconsistências,
+   também é recomendado atualizar os arquivos `.env.test.local` e `.env.development.local` com seus valores.
 
    ```env
    SECRET_KEY_BASE
