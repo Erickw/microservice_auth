@@ -55,7 +55,7 @@ Microserviço de usuários em Ruby on Rails que implementa operações CRUD, ger
 bundle exec rspec
 ```
 
-- O projeto atualmente conta com 94.2% de cobertura de testes de acord o com a gem [Simplecov](https://github.com/simplecov-ruby/simplecov).
+- O projeto atualmente conta com 94.2% de cobertura de testes de acordo com a gem [Simplecov](https://github.com/simplecov-ruby/simplecov).
 
 ![image](https://github.com/Erickw/microservice_auth/assets/12042480/ef05d768-c067-4114-8d2b-0f956696af59)
 
