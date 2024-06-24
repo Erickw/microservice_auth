@@ -63,6 +63,12 @@ bundle exec rspec
 
 ## Uso
 
+#### Execute o servidor localmente com o seguinte comando:
+
+```sh
+bundle exec rails s
+```
+
 ### Endpoints Autenticação
 
 #### Sign Up
