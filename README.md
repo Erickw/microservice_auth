@@ -1,6 +1,6 @@
 # MicroService Auth
 
-Microserviço de usuários em Ruby on Rails que implementa operações CRUD, geração de tokens seguros utilizando JWT e troca de senha utilizando PostgreSQL.
+Microserviço de usuários em Ruby on Rails que implementa operações CRUD, geração de tokens seguros utilizando JWT e troca de senha utilizando PostgreSQL no formato de API REST.
 
 ## Funcionalidades
 
