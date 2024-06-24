@@ -4,7 +4,7 @@ class AuthenticationController < ApplicationController
 
     if @user&.authenticate(params[:password])
       token = encode_token({ user_id: @user.id })
-      render json: { token: token }, status: :ok
+      render json:  token , status: :ok
     else
       render json: { error: 'Invalid email or password' }, status: :unauthorized
     end
@@ -14,7 +14,7 @@ class AuthenticationController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       token = encode_token({ user_id: @user.id })
-      render json: { token: token }, status: :created
+      render json: {message: "Account created successfully", token: token }, status: :created
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -42,7 +42,8 @@ class AuthenticationController < ApplicationController
     expire_time = expire_hours.hours.from_now.to_i
     exp_payload = { data: payload, exp: expire_time }
 
-    JWT.encode exp_payload, ENV['SECRET_KEY_BASE']
+    encoded = JWT.encode exp_payload, ENV['SECRET_KEY_BASE']
+    {token: encoded, exp: Time.at(expire_time)}
   end
 
   def user_params
